@@ -1,0 +1,18 @@
+server:
+  port: 80
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: base-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: breed
+        uri: http://localhost:9999
+        predicates:
+        - Path=/login/*
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer0:8000/eureka/,http://peer1:8001/eureka/,http://peer2:8002/eureka/
