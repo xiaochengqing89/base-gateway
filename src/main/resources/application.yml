@@ -12,7 +12,8 @@ spring:
         uri: http://localhost:9999
         predicates:
         - Path=/login/*
-eureka:
-  client:
-    service-url:
-      defaultZone: http://peer0:8000/eureka/,http://peer1:8001/eureka/,http://peer2:8002/eureka/
+    config:
+      name: bootstrap-dev
+      profile: dev
+      label: master
+      uri: http://localhost:8888
